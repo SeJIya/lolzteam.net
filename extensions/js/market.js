@@ -1,8 +1,14 @@
 let process = false;
 $(document).ready(function() {
-    setInterval(function(){
-        getItem();
-    }, 200);
+    let login = $('.login-and-signup-btn');
+    console.log(login.length);
+    if(login.length > 0){
+        console.error('Please login in!');
+    }else{
+        setInterval(function(){
+            getItem();
+        }, 200);
+    }
 });
 
 async function getItem(){
