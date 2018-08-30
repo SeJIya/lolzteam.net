@@ -4,7 +4,7 @@
 # lolzteam.net
 Market steam account checker and quick buy
 
-BEFORE:
+BEFORE:__
 ![BEFORE](https://github.com/SeJIya/lolzteam.net/blob/master/img/before.png)
 AFTER:
 ![AFTER](https://github.com/SeJIya/lolzteam.net/blob/master/img/after.png)
