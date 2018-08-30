@@ -3,7 +3,7 @@
 	"name": "Market Steam Account Checker",
 	"short_name": "lolzteam.net MSAC",
 	"description": "by SeJIya © 2018", 
-	"version": "1.3",
+	"version": "1.4",
   
 	"content_scripts": [
 		{

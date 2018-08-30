@@ -1,7 +1,6 @@
 let process = false;
 $(document).ready(function() {
     let login = $('.login-and-signup-btn');
-    console.log(login.length);
     if(login.length > 0){
         console.error('Please login in!');
     }else{
