@@ -1,0 +1,39 @@
+.info{
+	border-radius: 1px;
+    line-height: 26px;
+    height: 26px;
+    display: inline-block;
+    padding: 0 10px;
+    margin-bottom: 4px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    max-width: 32%;
+   	background: #545454;
+	color: #fff;
+	margin: 0px 0px 0px 4px;
+	user-select: none;
+	cursor: default;
+}
+
+.link{
+	margin: 0px;
+	background: #238e5d;
+	cursor: pointer;
+}
+
+.link:hover{
+	background: #1da76f;
+}
+
+.checked{
+	margin: 0 20px;
+    padding: 15px 0;
+	border-bottom: 1px solid rgb(48,48,48);
+}
+
+.kt{
+	margin: 0px 4px 0px 0px;
+	background: #753232;
+}
