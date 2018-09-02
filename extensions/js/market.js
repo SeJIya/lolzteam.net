@@ -79,7 +79,7 @@ function CheckAcc(items, href, i){
                     if(getSteamBadgesInfo.indexOf('profile_xp_block_xp') > -1){
                         let block_xp = $(getSteamBadgesInfo).find('.profile_xp_block_xp')[0];
                         let xp = $(block_xp).text();
-                        if(xp != 'XP 0'){
+                        if(xp != 'XP 0' && communitybanned != 'Banned'){
                             limit = '<div class="info nolimit">NO LIMIT</div>';
                         }else{
                             limit = '<div class="info limit">LIMIT</div>';
