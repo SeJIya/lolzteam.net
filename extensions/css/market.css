@@ -33,7 +33,20 @@
 	border-bottom: 1px solid rgb(48,48,48);
 }
 
-.kt{
+.kt, .limit{
 	margin: 0px 4px 0px 0px;
 	background: #753232;
+}
+
+.nolimit{
+	margin: 0px 4px 0px 0px;
+	background: #238e5d;
+}
+
+.clicked{
+	background: #de4344;
+}
+
+.clicked:hover{
+	background: #e45758;
 }
