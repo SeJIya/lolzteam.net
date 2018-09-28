@@ -99,7 +99,6 @@ function CheckAcc(items, href, i){
                 resolve(error);
             });
         }catch(error){
-            // $(items[i]).addClass('checked err').removeClass('marketIndexItem');
             resolve(error);
         }
     });
