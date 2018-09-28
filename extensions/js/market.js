@@ -59,13 +59,17 @@ function CheckAcc(items, href, i){
             let steamrep = [];
             steamrep.push(
                 GetRequest('https://steamrep.com/util.php?op=getSteamBanInfo&id=' + profile + '&tm=' + time, 'json'),
-                GetRequest('https://steamrep.com/util.php?op=getSteamProfileInfo&id=' + profile + '&tm=' + time, 'json'),
-                GetRequest('https://steamcommunity.com/profiles/' + profile + '/badges', 'text')
+                GetRequest('https://steamrep.com/util.php?op=getSteamProfileInfo&id=' + profile + '&tm=' + time, 'json')
             );
-            await Promise.all(steamrep).then(value => {
+            await Promise.all(steamrep).then(async value => {
                 let getSteamBanInfo = value[0];
                 let getSteamProfileInfo = value[1];
-                let getSteamBadgesInfo = value[2];
+                let getSteamBadgesInfo;
+                try {
+                    getSteamBadgesInfo = await GetRequest('https://steamcommunity.com/profiles/' + profile + '/badges', 'text');
+                } catch (error) {
+                    getSteamBadgesInfo = '';
+                }
                 let communitybanned =  getSteamBanInfo.communitybanned;
                 let steamlevel = getSteamProfileInfo.steamlevel;
                 let kt = '';
@@ -95,6 +99,7 @@ function CheckAcc(items, href, i){
                 resolve(error);
             });
         }catch(error){
+            // $(items[i]).addClass('checked err').removeClass('marketIndexItem');
             resolve(error);
         }
     });
