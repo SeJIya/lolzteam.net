@@ -86,7 +86,7 @@ function CheckAcc(items, href, i){
                         }
                     }
                 }
-                $(prices[i]).removeClass('marketIndexItem--Price').addClass('fl_l marketItemPrice').html(buy);
+                $(prices[i]).removeClass('marketIndexItem--Price').addClass('fl_r marketItemPrice').html(buy);
                 $(stats).append(kt + limit + '<div class="info link" id="' + profile +'">АСС</div>' + level + '<div class="info origins">' + origin + '</div><div class="info online">' + online + '</div>');
                 $(items[i]).addClass('checked').removeClass('marketIndexItem');
                 $(otherinfo).append(fbCounter);

@@ -33,6 +33,10 @@
 	border-bottom: 1px solid rgb(48,48,48);
 }
 
+.checked .Popup {
+    display: inline-block;
+}
+
 .kt, .limit{
 	margin: 0px 4px 0px 0px;
 	background: #753232;
