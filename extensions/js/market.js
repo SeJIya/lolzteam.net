@@ -49,10 +49,21 @@ function CheckAcc(items, href, i){
             let fbCounter = $(items[i]).find('.marketIndexItem--fbCounter')[0];
             let buy = $($(results).find('.marketItemPrice')[0]).html();
             buy = buy.replace('&amp;show_notice=1', '').replace('class="', 'target="_blank" class="');
-            let labeled = $(info).find('.labeled');
-            let link = $($(labeled[0]).find('a')[0]).attr('href');
-            let origin = $(labeled[1]).text();
-            let online =  $($(labeled[2]).find('.DateTime')[0]).text();
+            let marketcounters = $(info).find('.marketItemView--counters')[0];
+            let counter = $(marketcounters).find('.counter');
+            let origin;
+            let online;
+            for(let j = 0; j < counter.length; j++){
+                let muted = $($(counter[j]).find('.muted')[0]).text();
+                if(muted == 'Происхождение аккаунта' || muted == 'Account origin'){
+                    origin = $($(counter[j]).find('.label')[0]).text();
+                }
+                if(muted == 'Последняя активность' || muted == 'Last activity'){
+                    online =  $($(counter[j]).find('.DateTime')[0]).text();
+                }
+            }
+            let labeled = $(info).find('.labeled')[0];
+            let link = $($(labeled).find('a')[0]).attr('href');
             let stats = $(items[i]).find('.marketIndexItem--Stats');
             let profile = link.split('/')[4];
             let time = Math.floor(Date.now() / 1000);

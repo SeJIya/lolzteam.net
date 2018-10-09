@@ -9,7 +9,12 @@
 		{
 			"css": [ "css/market.css"],
 			"js": ["js/jquery.js", "js/market.js" ],
-			"matches": ["*://lolzteam.net/market/?category_id=1*", "*://lolzteam.org/market/?category_id=1*"],
+			"matches": 	[
+				"*://lolzteam.net/market/?category_id=1",
+				"*://lolzteam.net/market/?category_id=1&*",
+				"*://lolzteam.org/market/?category_id=1",
+				"*://lolzteam.org/market/?category_id=1&*"
+			],
 			"run_at": "document_end"
 		}
 	],
