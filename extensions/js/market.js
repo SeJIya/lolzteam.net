@@ -4,8 +4,12 @@ $(document).ready(function() {
     if(login.length > 0){
         console.error('Please login in!');
     }else{
+        let cookie = document.cookie;
         setInterval(function(){
-            getItem();
+            cookie = document.cookie;
+            if(cookie.indexOf("category_id%3D1") > -1){
+                getItem();
+            }
         }, 200);
     }
 

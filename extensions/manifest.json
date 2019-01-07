@@ -10,17 +10,13 @@
 			"css": [ "css/market.css"],
 			"js": ["js/jquery.js", "js/market.js" ],
 			"matches": 	[
-				"*://lolzteam.net/market/?category_id=1",
-				"*://lolzteam.net/market/?category_id=1&*",
-				"*://lolzteam.org/market/?category_id=1",
-				"*://lolzteam.org/market/?category_id=1&*"
+				"*://lolzteam.net/market/"
 			],
 			"run_at": "document_end"
 		}
 	],
 	"permissions": [
 		"https://lolzteam.net/",
-		"https://lolzteam.org/",
 		"https://steamrep.com/",
 		"https://steamcommunity.com/"
 	],
