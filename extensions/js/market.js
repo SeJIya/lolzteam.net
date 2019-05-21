@@ -66,7 +66,7 @@ function CheckAcc(items, href, i){
                     online =  $($(counter[j]).find('.DateTime')[0]).text();
                 }
             }
-            let labeled = $(info).find('.labeled')[0];
+            let labeled = $(info).find('.contact')[0];
             let link = $($(labeled).find('a')[0]).attr('href');
             let stats = $(items[i]).find('.marketIndexItem--Stats');
             let profile = link.split('/')[4];
