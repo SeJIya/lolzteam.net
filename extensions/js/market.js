@@ -1,13 +1,13 @@
 let process = false;
-$(document).ready(function() {
+$(document).ready(() => {
     let login = $('.login-and-signup-btn');
     if(login.length > 0){
         console.error('Please login in!');
     }else{
-        let cookie = document.cookie;
-        setInterval(function(){
-            cookie = document.cookie;
-            if(cookie.indexOf("category_id%3D1") > -1){
+        let href = document.location.href;
+        setInterval(() => {
+            href = document.location.href;
+            if(href.indexOf("lolzteam.net/market/steam/") > -1){
                 getItem();
             }
         }, 200);
@@ -34,7 +34,7 @@ async function getItem(){
                 let href = $(link).attr('href');
                 array.push(CheckAcc(items, href, i));
             }
-            await Promise.all(array).then(function(value){
+            await Promise.all(array).then((value) => {
                 process = false;
             });
         }else{
@@ -44,15 +44,16 @@ async function getItem(){
 };
 
 function CheckAcc(items, href, i){
-    return new Promise(async function(resolve, reject){
+    return new Promise(async (resolve, reject) => {
         let prices = $('.marketIndexItem--Price');
         try{
             let results = await GetRequest('https://lolzteam.net/' + href, 'text');
             let info =  $(results).find('.marketItemView--mainInfoContainer')[0];
             let otherinfo = $(items[i]).find('.marketIndexItem--otherInfo')[0];
             let fbCounter = $(items[i]).find('.marketIndexItem--fbCounter')[0];
-            let buy = $($(results).find('.marketItemPrice')[0]).html();
-            buy = buy.replace('&amp;show_notice=1', '').replace('class="', 'target="_blank" class="');
+            let price = $($(results).find('.price')[0]).text();
+            let buy = $($(results).find('.mn-30-0-0')[0]).html();
+            buy = buy.replace('&amp;show_notice=1', '').replace('class="', 'target="_blank" class="').replace('Купить', price).replace('Buy', price).replace(/\<(a)\ (href)\=\"(.*)(ToFavouritesButton)(.*)\>/g, '');
             let marketcounters = $(info).find('.marketItemView--counters')[0];
             let counter = $(marketcounters).find('.counter');
             let origin;
@@ -120,15 +121,15 @@ function CheckAcc(items, href, i){
 }
 
 function GetRequest(url, response){
-    return new Promise(function(resolve, reject){
+    return new Promise((resolve, reject) =>{
         $.ajax({
             type:'GET',
             url,
             response,
-            success:function (data) {
+            success: (data) => {
                 resolve(data);
             },
-            error:function (jqXHR, exception){
+            error: (jqXHR, exception) => {
                 reject(jqXHR.statusText);
             }
         });

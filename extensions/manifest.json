@@ -10,8 +10,7 @@
 			"css": [ "css/market.css"],
 			"js": ["js/jquery.js", "js/market.js" ],
 			"matches": 	[
-				"*://lolzteam.net/market/",
-				"*://lolzteam.net/market/steam/"
+				"*://lolzteam.net/market/steam/*"
 			],
 			"run_at": "document_end"
 		}
